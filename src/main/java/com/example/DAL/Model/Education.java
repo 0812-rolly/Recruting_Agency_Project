@@ -1,7 +1,6 @@
 package com.example.DAL.Model;
 
 import javax.persistence.*;
-import java.sql.Date;
 import java.util.Objects;
 
 @Entity
@@ -21,9 +20,9 @@ public class Education {
 
     private String typeOfDocument;
 
-    private Date startDate;
+    private Integer startDate;
 
-    private Date endDate;
+    private Integer endDate;
 
     public Long getId() {
         return id;
@@ -73,19 +72,19 @@ public class Education {
         this.typeOfDocument = typeOfDocument;
     }
 
-    public Date getStartDate() {
+    public Integer getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(Date startDate) {
+    public void setStartDate(Integer startDate) {
         this.startDate = startDate;
     }
 
-    public Date getEndDate() {
+    public Integer getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(Date endDate) {
+    public void setEndDate(Integer endDate) {
         this.endDate = endDate;
     }
 

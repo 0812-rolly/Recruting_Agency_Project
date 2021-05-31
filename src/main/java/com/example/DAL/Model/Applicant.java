@@ -5,17 +5,7 @@ import java.sql.Date;
 import java.util.Objects;
 
 @Entity
-public class Applicant {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    private String surname;
-
-    private String name;
-
-    private String patronymic;
+public class Applicant extends Person{
 
     private String gender;
 
@@ -24,8 +14,6 @@ public class Applicant {
     private String city;
 
     private String addres;
-
-    private String phoneNumber;
 
     private String pasportNumber;
 
@@ -42,38 +30,6 @@ public class Applicant {
     private Date applicationDate;
 
     private String applicationStatus;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getSurname() {
-        return surname;
-    }
-
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getPatronymic() {
-        return patronymic;
-    }
-
-    public void setPatronymic(String patronymic) {
-        this.patronymic = patronymic;
-    }
 
     public String getGender() {
         return gender;
@@ -105,14 +61,6 @@ public class Applicant {
 
     public void setAddres(String addres) {
         this.addres = addres;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
     }
 
     public String getPasportNumber() {
@@ -184,11 +132,11 @@ public class Applicant {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Applicant applicant = (Applicant) o;
-        return Objects.equals(id, applicant.id) && Objects.equals(surname, applicant.surname) && Objects.equals(name, applicant.name) && Objects.equals(patronymic, applicant.patronymic) && Objects.equals(gender, applicant.gender) && Objects.equals(age, applicant.age) && Objects.equals(city, applicant.city) && Objects.equals(addres, applicant.addres) && Objects.equals(phoneNumber, applicant.phoneNumber) && Objects.equals(pasportNumber, applicant.pasportNumber) && Objects.equals(inn, applicant.inn) && Objects.equals(snils, applicant.snils) && Objects.equals(requiredPosition, applicant.requiredPosition) && Objects.equals(requiredSalary, applicant.requiredSalary) && Objects.equals(workShedule, applicant.workShedule) && Objects.equals(applicationDate, applicant.applicationDate) && Objects.equals(applicationStatus, applicant.applicationStatus);
+        return Objects.equals(gender, applicant.gender) && Objects.equals(age, applicant.age) && Objects.equals(city, applicant.city) && Objects.equals(addres, applicant.addres) && Objects.equals(pasportNumber, applicant.pasportNumber) && Objects.equals(inn, applicant.inn) && Objects.equals(snils, applicant.snils) && Objects.equals(requiredPosition, applicant.requiredPosition) && Objects.equals(requiredSalary, applicant.requiredSalary) && Objects.equals(workShedule, applicant.workShedule) && Objects.equals(applicationDate, applicant.applicationDate) && Objects.equals(applicationStatus, applicant.applicationStatus);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, surname, name, patronymic, gender, age, city, addres, phoneNumber, pasportNumber, inn, snils, requiredPosition, requiredSalary, workShedule, applicationDate, applicationStatus);
+        return Objects.hash(gender, age, city, addres, pasportNumber, inn, snils, requiredPosition, requiredSalary, workShedule, applicationDate, applicationStatus);
     }
 }
