@@ -11,6 +11,8 @@ public interface ApplicantDAO {
     //read
     Applicant getByPasportNumber(String pasportNumber);
 
+    Applicant getByPhoneNumber(String phoneNumber);
+
     Applicant getById(Long id);
 
     List<Applicant> getByReqPosition(String reqPosition);

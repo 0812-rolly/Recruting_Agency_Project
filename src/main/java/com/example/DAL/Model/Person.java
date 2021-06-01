@@ -17,6 +17,7 @@ public class Person {
 
     private String patronymic;
 
+    @Column(unique = true)
     private String phoneNumber;
 
     public Long getId() {

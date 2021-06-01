@@ -15,6 +15,7 @@ public class Applicant extends Person{
 
     private String addres;
 
+    @Column(unique = true)
     private String pasportNumber;
 
     private String inn;

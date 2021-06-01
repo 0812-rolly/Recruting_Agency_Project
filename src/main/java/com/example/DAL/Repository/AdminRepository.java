@@ -31,11 +31,6 @@ public class AdminRepository implements AdminDAO {
     }
 
     @Override
-    public void update(Admin admin) throws NoResultException {
-
-    }
-
-    @Override
     public void delete(Admin admin) {
 
     }

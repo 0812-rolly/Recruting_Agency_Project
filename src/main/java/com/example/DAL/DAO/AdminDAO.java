@@ -10,8 +10,6 @@ public interface AdminDAO {
 
     void checkLogin(String email, String pass);
 
-    void update(Admin admin);
-
     void delete(Admin admin);
 
 }

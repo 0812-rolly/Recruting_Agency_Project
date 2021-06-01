@@ -44,6 +44,25 @@ public class ApplicantRepository implements ApplicantDAO {
     }
 
     @Override
+    public Applicant getByPhoneNumber(String phoneNumber) {
+
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction transaction = session.beginTransaction();
+
+        CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
+        CriteriaQuery<Applicant> query = criteriaBuilder.createQuery(Applicant.class);
+        Root<Applicant> applicantRoot = query.from(Applicant.class);
+        query.where(criteriaBuilder.equal(applicantRoot.get(Applicant_.phoneNumber), phoneNumber));
+        query.select(applicantRoot);
+
+        Applicant applicant = session.createQuery(query).getSingleResult();
+
+        transaction.commit();
+        session.close();
+        return applicant;
+    }
+
+    @Override
     public Applicant getById(Long id) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction transaction = session.beginTransaction();
