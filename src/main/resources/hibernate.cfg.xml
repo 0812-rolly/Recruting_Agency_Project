@@ -30,6 +30,7 @@
         <mapping class="com.example.DAL.Model.Vacancy"/>
         <mapping class="com.example.DAL.Model.WorkContract"/>
         <mapping class="com.example.DAL.Model.Person"/>
+        <mapping class="com.example.DAL.Model.Admin"/>
 
     </session-factory>
 

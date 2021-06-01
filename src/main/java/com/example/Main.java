@@ -2,6 +2,7 @@ package com.example;
 
 import com.example.DAL.Model.*;
 import com.example.util.HibernateUtil;
+import com.example.util.StringHandler;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -21,6 +22,10 @@ public class Main {
 
     private static void fillDatabase(Session session) {
         final Transaction transaction = session.beginTransaction();
+
+        Admin admin = new Admin();
+        admin.setEmail("belozub.yanochka@mail.ru");
+        admin.setPassword(StringHandler.encryptString("qwerty1234"));
 
         RecrutingAgency recag1 = new RecrutingAgency();
         recag1.setName("Staffline");
@@ -233,6 +238,7 @@ public class Main {
         wc1.setContractDuration(Date.valueOf("2024-02-28"));
         wc1.setBeginningOfWork(Date.valueOf("2021-02-28"));
 
+        session.save(admin);
         session.save(recag1);
         session.save(recag2);
         session.save(man1);
