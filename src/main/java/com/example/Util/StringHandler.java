@@ -1,4 +1,4 @@
-package com.example.util;
+package com.example.Util;
 
 import org.apache.commons.codec.digest.Crypt;
 

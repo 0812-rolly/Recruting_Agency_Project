@@ -2,7 +2,7 @@ package com.example.DAL.Repository;
 
 import com.example.DAL.DAO.VacancyDAO;
 import com.example.DAL.Model.*;
-import com.example.util.HibernateUtil;
+import com.example.Util.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 

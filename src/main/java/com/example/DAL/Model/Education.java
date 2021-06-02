@@ -1,5 +1,8 @@
 package com.example.DAL.Model;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import javax.persistence.*;
 import java.util.Objects;
 
@@ -10,8 +13,10 @@ public class Education {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @ManyToOne (cascade = CascadeType.ALL)
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private EducationInstitution educationInstitution;
     @ManyToOne (cascade = CascadeType.ALL)
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private Applicant applicant;
 
     private String faculty;

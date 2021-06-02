@@ -36,7 +36,7 @@ public class RecrutingAgencyController {
         return recrutingAgencyRepository.getAll();
     }
 
-    public boolean deleteCompany(Long Id){
+    public boolean deleteRecAg(Long Id){
         try{
             RecrutingAgency recAg = recrutingAgencyRepository.getById(Id);
 

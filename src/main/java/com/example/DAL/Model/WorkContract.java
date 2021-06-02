@@ -1,5 +1,8 @@
 package com.example.DAL.Model;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import javax.persistence.*;
 import java.sql.Date;
 import java.util.Objects;
@@ -11,11 +14,14 @@ public class WorkContract {
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long id;
         @OneToOne (cascade = CascadeType.ALL)
+        @OnDelete(action = OnDeleteAction.CASCADE)
         private Applicant applicant;
-        @ManyToOne
+        @ManyToOne(cascade = CascadeType.ALL)
+        @OnDelete(action = OnDeleteAction.CASCADE)
         @JoinColumn(name="id_manager", nullable=false)
         private Manager manager;
         @OneToOne (cascade = CascadeType.ALL)
+        @OnDelete(action = OnDeleteAction.CASCADE)
         private Vacancy vacancy;
 
         private Date contractDuration;

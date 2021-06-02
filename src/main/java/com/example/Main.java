@@ -1,8 +1,9 @@
 package com.example;
 
 import com.example.DAL.Model.*;
-import com.example.util.HibernateUtil;
-import com.example.util.StringHandler;
+import com.example.Util.HibernateUtil;
+import com.example.Util.StringHandler;
+import com.example.View.Interaction;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -13,9 +14,10 @@ import java.sql.Date;
 public class Main {
     public static void main(String[] args) {
         SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
-
         fillDatabase(sessionFactory.openSession());
-        //start();
+
+        Interaction interaction = new Interaction();
+        interaction.displayLoginPage();
 
         HibernateUtil.shutdown();
     }
@@ -268,15 +270,7 @@ public class Main {
 
         transaction.commit();
         session.close();
-    }
-
-//    private static void start() {
-//        MainNavigator view = new MainNavigator();
-//        while (UserUtil.getCurrentUser() == null) {
-//            view.showLoginPage();
-//        }
-//    }
-
+        }
     }
 
 

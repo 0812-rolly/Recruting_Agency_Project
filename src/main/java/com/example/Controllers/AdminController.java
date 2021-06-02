@@ -3,7 +3,7 @@ package com.example.Controllers;
 import com.example.DAL.DAO.*;
 import com.example.DAL.Model.*;
 import com.example.DAL.Repository.*;
-import com.example.util.StringHandler;
+import com.example.Util.StringHandler;
 
 public class AdminController {
     private static AdminDAO adminRepository = new AdminRepository();

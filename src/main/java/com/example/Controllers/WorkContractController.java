@@ -3,7 +3,7 @@ package com.example.Controllers;
 import com.example.DAL.DAO.*;
 import com.example.DAL.Model.*;
 import com.example.DAL.Repository.*;
-import com.example.util.StringHandler;
+import com.example.Util.StringHandler;
 
 import java.sql.Date;
 import java.util.List;
@@ -15,7 +15,7 @@ public class WorkContractController {
     private static ApplicantDAO applicantRepository = new ApplicantRepository();
     private static ManagerDAO managerRepository = new ManagerRepository();
 
-    public boolean addEducation(Long applicant, Long manager, Long vacancy,
+    public boolean addWorkContract(Long applicant, Long manager, Long vacancy,
                                 Date contractDuration, Date beginningOfWork){
         try{
             Vacancy vac = vacancyRepository.getById(vacancy);
@@ -64,7 +64,7 @@ public class WorkContractController {
         }
     }
 
-    public boolean deleteCompany(Long Id){
+    public boolean deleteWorkContract(Long Id){
         try{
             WorkContract workContract = workContractRepository.getById(Id);
 

@@ -1,6 +1,8 @@
 package com.example.DAL.Model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 import java.util.Objects;
@@ -10,6 +12,7 @@ import java.util.Set;
 public class Manager extends Person{
 
     @ManyToOne (cascade = CascadeType.ALL)
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private RecrutingAgency recrutingAgency;
 
     public RecrutingAgency getRecrutingAgency() {

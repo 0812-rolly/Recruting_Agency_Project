@@ -14,8 +14,6 @@ public interface WorkContractDAO {
 
     List<WorkContract> getAll();
 
-    List<WorkContract> getByDatePeriod(Date begin, Date end);
-
     //update
     void update(WorkContract workCont);
 

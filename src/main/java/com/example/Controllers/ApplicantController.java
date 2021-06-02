@@ -65,6 +65,15 @@ public class ApplicantController {
         }
     }
 
+    public Applicant getByPhoneNumber(String phoneNumber){
+        try{
+            return applicantRepository.getByPhoneNumber(phoneNumber);
+        }
+        catch(Exception e){
+            return null;
+        }
+    }
+
     public List<Applicant> getByReqPosition(String reqPosition){
         try{
             return applicantRepository.getByReqPosition(reqPosition);

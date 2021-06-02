@@ -14,7 +14,7 @@ public class LaborHistoryController {
 
     public boolean addLaborHistory(Long applicant, Long company, String position, Integer experience){
         try{
-            Company comp = companyRepository.getById(applicant);
+            Company comp = companyRepository.getById(company);
             Applicant applic = applicantRepository.getById(applicant);
 
             LaborHistory labHist = new LaborHistory();
